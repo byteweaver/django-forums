@@ -7,3 +7,5 @@ local_settings.py
 /env/
 /build/
 /dist/
+coverage/
+.coverage
