@@ -10,3 +10,6 @@ environment:
 
 reqirements:
 	$(PIP_BIN) install -r requirements.txt
+
+test:
+	$(PYTHON_BIN) skeleton/tests.py
