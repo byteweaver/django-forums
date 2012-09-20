@@ -23,4 +23,5 @@ setup(
         'coverage',
         'django-coverage',
     ],
+    test_suite='skeleton.tests',
 )
