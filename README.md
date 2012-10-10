@@ -5,6 +5,11 @@ skeleton for new django applications.
 
 All following sections are just dummies and may not work as excepted.
 
+## Key features
+
+* Reusable skeleton for new apps
+* ...
+
 ## Installation
 
 If you want to install the latest stable release from PyPi:
