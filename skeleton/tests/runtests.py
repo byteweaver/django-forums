@@ -22,7 +22,7 @@ EXTERNAL_APPS = [
 ]
 INTERNAL_APPS = [
     'django_nose',
-    'application',
+    'skeleton',
 ]
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS
 COVERAGE_MODULE_EXCLUDES = [
