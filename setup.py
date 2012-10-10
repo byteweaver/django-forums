@@ -1,13 +1,15 @@
 import os
 from setuptools import setup, find_packages
 
+import skeleton
+
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
     name='django-skeleton',
-    version='0.0.1',
+    version=skeleton.__version__,
     description='skeleton for new django applications',
     long_description=read('README.md'),
     license=read('LICENSE'),
