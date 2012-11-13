@@ -12,7 +12,7 @@ setup(
     version=skeleton.__version__,
     description='skeleton for new django applications',
     long_description=read('README.md'),
-    license=read('LICENSE'),
+    license='MIT License',
     author='byteweaver',
     author_email='contact@byteweaver.net',
     url='https://github.com/byteweaver/django-skeleton',
