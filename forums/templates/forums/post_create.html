@@ -11,6 +11,7 @@
     <li><a href="{% url forums:overview %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
     <li><a href="{% url forums:overview %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
     <li><a href="{% url forums:forum topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
+    <li><a href="{% url forums:topic topic.id %}">{{topic.name}}</a> <span class="divider">/</span></li>
     <li class="active">{% trans "Create post" %}</li>
 </ul>
 {% endblock %}
