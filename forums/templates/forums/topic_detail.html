@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+{% for post in topic.posts.all %}
+<div>
+    <div class="thumbnail pull-left" style="margin-right: 15px;">
+        <img src="http://placehold.it/64x64" alt="avatar">
+    </div>
+    <div>
+        <p>{{post.user.username}}</p>
+    </div>
+    <div>
+        {{post.body|linebreaks}}
+    </div>
+</div>
+<hr>
+{% endfor %}
+{% endblock %}
