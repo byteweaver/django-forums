@@ -10,7 +10,7 @@ def read(fname):
 setup(
     name='django-forums',
     version=forums.__version__,
-    description='reusable django forums applications',
+    description='Small standalone django forums application',
     long_description=read('README.md'),
     license='MIT License',
     author='byteweaver',
