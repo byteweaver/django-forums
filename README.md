@@ -6,7 +6,7 @@ Small standalone django forums application.
 ## Key features
 
 * Reusable forums app
-* Templates work with Twitter Bootstrap
+* Templates use Bootstrap (twitter) styles
 * ...
 
 ## Installation
