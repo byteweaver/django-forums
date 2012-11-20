@@ -24,6 +24,15 @@ class Forum(models.Model):
     class Meta:
         ordering = ['position']
 
+    def count_topics(self):
+        return self.topics.count()
+
+    def count_posts(self):
+        count = 0
+        for topic in self.topics.all():
+            count += topic.count_posts()
+        return count
+
     def __unicode__(self):
         return self.name
 
@@ -35,6 +44,9 @@ class Topic(models.Model):
 
     class Meta:
         ordering = ['-last_post__created']
+
+    def count_posts(self):
+        return self.posts.count()
 
     def __unicode__(self):
         return self.name
