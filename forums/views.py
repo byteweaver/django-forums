@@ -43,6 +43,8 @@ class PostCreateView(FormView):
         user = self.request.user
         topic = Topic.objects.get(id=self.kwargs.get('pk', None))
 
+        self.success_url = reverse('forums:topic', args=[topic.id])
+
         return super(PostCreateView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
