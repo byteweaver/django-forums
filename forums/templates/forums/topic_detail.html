@@ -4,17 +4,31 @@
 
 {% block content %}
 {% for post in topic.posts.all %}
-<div>
-    <div class="thumbnail pull-left" style="margin-right: 15px;">
-        <img src="http://placehold.it/64x64" alt="avatar">
+<div class="row">
+    <div class="span3">
+        <div class="thumbnail pull-left" style="margin-right: 15px;">
+            <img src="http://placehold.it/64x64" alt="avatar">
+        </div>
+        <div>
+            <p>{{post.user.username}}</p>
+        </div>
     </div>
-    <div>
-        <p>{{post.user.username}}</p>
+    <div class="span7">
+        <div>
+            {{post.body|linebreaks}}
+        </div>
+        <div style="clear: both;"></div>
     </div>
-    <div>
-        {{post.body|linebreaks}}
+    <div class="span2">
+        <p class="pull-right"><small><a href="#{{forloop.counter}}" name="{{forloop.counter}}">#{{forloop.counter}}</a></small></p>
+        <p class="pull-right"><small>{{post.created}}</small></p>
     </div>
 </div>
 <hr>
 {% endfor %}
+<div class="row">
+    <div class="span12">
+        <p><a href="{% url forums:post_create topic.id %}" class="btn btn-primary">{% trans "Create post" %}</a></p>
+    </div>
+</div>
 {% endblock %}
