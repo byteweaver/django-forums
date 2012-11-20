@@ -1,8 +1,25 @@
 {% extends "base.html" %}
 
 {% load i18n %}
+{% load accounts %}
+
+{% block title %}
+{% trans "Forums" %} - {{block.super}}
+{% endblock %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li><a href="{% url forums:overview %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
+    <li><a href="{% url forums:overview %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
+    <li><a href="{% url forums:forum topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
+    <li class="active">{{topic.name}}</li>
+</ul>
+{% endblock %}
 
 {% block content %}
+<div class="page-header">
+    <h1>{% trans "Forums" %}</h1>
+</div>
 {% for post in topic.posts.all %}
 <div class="row">
     <div class="span3">

@@ -2,8 +2,23 @@
 
 {% load i18n %}
 
+{% block title %}
+{% trans "Forums" %} - {{block.super}}
+{% endblock %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+    <li><a href="{% url forums:overview %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
+    <li><a href="{% url forums:overview %}#{{forum.category.id}}">{{forum.category.name}}</a> <span class="divider">/</span></li>
+    <li class="active">{{forum.name}}</li>
+</ul>
+{% endblock %}
+
 {% block content %}
-<table>
+<div class="page-header">
+    <h1>{% trans "Forums" %}</h1>
+</div>
+<table class="table">
     <thead>
         <tr>
             <th colspan="2">{% trans "Topics" %}</th>
@@ -15,7 +30,7 @@
     <tbody>
         {% for topic in forum.topics.all %}
         <tr>
-            <td>icon</td>
+            <td style="width: 14px;"><i class="icon-circle-arrow-right" style="margin-top: 1px;"></i></td>
             <td style="width: 70%;">
                 <a href="{% url forums:topic topic.id %}">{{topic.name}}</a>
             </td>
@@ -30,5 +45,5 @@
         {% endfor %}
     </tbody>
 </table>
-<p><a href="{% url forums:topic_create forum.id %}">{% trans "Create topic" %}</a></p>
+<p><a href="{% url forums:topic_create forum.id %}" class="btn btn-primary">{% trans "Create topic" %}</a></p>
 {% endblock %}
