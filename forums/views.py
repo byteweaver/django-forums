@@ -1,4 +1,5 @@
 from django.views.generic import ListView, DetailView, FormView
+from django.core.urlresolvers import reverse
 
 from forms import TopicCreateForm, PostCreateForm
 from models import Category, Topic, Forum, Post
@@ -22,6 +23,8 @@ class TopicCreateView(FormView):
         post_body = form.cleaned_data['message']
         user = self.request.user
         forum = Forum.objects.get(id=self.kwargs.get('forum_id', None))
+
+        self.success_url = reverse('forums:topic', args=[topic.id])
 
         return super(TopicCreateView, self).form_valid(form)
 
