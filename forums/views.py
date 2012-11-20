@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 
-from models import Category, Forum
+from models import Category, Topic, Forum
 
 
 class CategoryListView(ListView):
@@ -8,3 +8,6 @@ class CategoryListView(ListView):
 
 class ForumDetailView(DetailView):
     model = Forum
+
+class TopicDetailView(DetailView):
+    model = Topic
