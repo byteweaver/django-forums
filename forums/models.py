@@ -27,6 +27,8 @@ class Topic(models.Model):
     name = models.CharField(_("Name"), max_length=255)
     last_post = models.ForeignKey('Post', verbose_name=_("Last post"), related_name='forum_last_post', blank=True, null=True)
 
+    class Meta:
+        ordering = ['-last_post__created']
 
 
 class Post(models.Model):
