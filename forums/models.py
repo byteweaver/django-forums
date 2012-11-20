@@ -6,6 +6,10 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(_("Name"), max_length=255, unique=True)
+    position = models.IntegerField(_("Position"), default=0)
+
+    class Meta:
+        ordering = ['position']
 
 
 class Forum(models.Model):
