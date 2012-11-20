@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div>
+    <form method="post" action="{% url forums:topic_create forum.id %}">
+        {% csrf_token %}
+        {% include "forms.html" %}
+        <p><input type="submit" value="{% trans "Create topic" %}"></p>
+    </form>
+</div>
+{% endblock %}
