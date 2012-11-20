@@ -6,6 +6,7 @@ All following sections are just dummies and may not work as excepted.
 ## Key features
 
 * Reusable forums app
+* Templates work with Twitter Bootstrap
 * ...
 
 ## Installation
