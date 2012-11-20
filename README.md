@@ -1,30 +1,28 @@
-django-skeleton
+django-forums
 ===============
-
-skeleton for new django applications.
 
 All following sections are just dummies and may not work as excepted.
 
 ## Key features
 
-* Reusable skeleton for new apps
+* Reusable forums app
 * ...
 
 ## Installation
 
 If you want to install the latest stable release from PyPi:
 
-    $ pip install django-skeleton
-  
+    $ pip install django-forums
+
 If you want to install the latest development version from GitHub:
 
-    $ pip install -e git://github.com/byteweaver/django-skeleton#egg=django-skeleton
+    $ pip install -e git://github.com/byteweaver/django-forums#egg=django-forums
 
-Add `skeleton` to your `INSTALLED_APPS`:
+Add `forums` to your `INSTALLED_APPS`:
 
     INSTALLED_APPS = (
         ...
-        'skeleton',
+        'forums',
         ...
     )
 
@@ -32,7 +30,7 @@ Hook this app into your ``urls.py``:
 
     urlpatterns = patterns('',
         ...
-        url(r'^your-url/$', include('skeleton.urls')),
+        url(r'^your-url/$', include('forums.urls')),
         ...
     )
 

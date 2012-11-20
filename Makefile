@@ -12,4 +12,4 @@ reqirements:
 	$(PIP_BIN) install -r requirements.txt
 
 test:
-	$(PYTHON_BIN) skeleton/tests.py
+	$(PYTHON_BIN) forums/tests.py
