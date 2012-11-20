@@ -24,6 +24,17 @@ class Forum(models.Model):
     class Meta:
         ordering = ['position']
 
+    def get_latest_topic(self):
+        if self.topics.count()>0:
+            return self.topics.all()[0]
+        return None
+
+    def get_latest_poster(self):
+        latest_topic = self.get_latest_topic()
+        if latest_topic:
+            return latest_topic.last_post.user.username
+        return '-'
+
     def count_topics(self):
         return self.topics.count()
 
