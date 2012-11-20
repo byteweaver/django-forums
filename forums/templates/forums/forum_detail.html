@@ -16,9 +16,11 @@
         {% for topic in forum.topics.all %}
         <tr>
             <td>icon</td>
-            <td>link</td>
-            <td>user</td>
-            <td>0</td>
+            <td style="width: 70%;">
+                <a href="{% url forums:topic topic.id %}">{{topic.name}}</a>
+            </td>
+            <td>{{topic.last_post.user.username}}</td>
+            <td>{{topic.count_posts}}</td>
             <td>0</td>
         </tr>
         {% empty %}
