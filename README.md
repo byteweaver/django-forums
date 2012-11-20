@@ -1,7 +1,7 @@
 django-forums
 ===============
 
-All following sections are just dummies and may not work as excepted.
+Small standalone django forums application.
 
 ## Key features
 
