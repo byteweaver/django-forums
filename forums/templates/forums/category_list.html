@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<table>
+    {% for category in category_list %}
+    <thead>
+        <tr>
+            <th colspan="2"><a name="{{category.id}}">{{category.name}}</a></th>
+            <td>{% trans "Last Poster" %}</td>
+            <td>{% trans "Topics" %}</td>
+            <td>{% trans "Posts" %}</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for forum in category.forums.all %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    {% endfor %}
+</table>
+{% endblock %}
