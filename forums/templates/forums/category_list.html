@@ -17,7 +17,9 @@
         {% for forum in category.forums.all %}
         <tr>
             <td></td>
-            <td></td>
+            <td style="width: 70%;">
+                <a href="{% url forums:forum forum.id %}">{{forum.name}}</a>
+            </td>
             <td></td>
             <td></td>
             <td></td>
