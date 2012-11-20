@@ -8,8 +8,8 @@ all: environment
 environment:
 	test -d "$(VIRTUALENV_FOLDER)" || virtualenv --no-site-packages $(VIRTUALENV_FOLDER)
 
-reqirements:
+reqirements: environment
 	$(PIP_BIN) install -r requirements.txt
 
-test:
-	$(PYTHON_BIN) forums/tests.py
+test: reqirements
+	$(PYTHON_BIN) forums/tests/runtests.py
