@@ -24,6 +24,13 @@ class TopicCreateView(FormView):
         user = self.request.user
         forum = Forum.objects.get(id=self.kwargs.get('forum_id', None))
 
+        topic = Topic(forum=forum, name=topic_name)
+        topic.save()
+        post = Post(topic=topic, body=post_body, user=user)
+        post.save()
+        topic.last_post = post
+        topic.save()
+
         self.success_url = reverse('forums:topic', args=[topic.id])
 
         return super(TopicCreateView, self).form_valid(form)
