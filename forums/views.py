@@ -35,6 +35,13 @@ class PostCreateView(FormView):
     template_name = 'forums/post_create.html'
     form_class = PostCreateForm
 
+    def form_valid(self, form):
+        body = form.cleaned_data['message']
+        user = self.request.user
+        topic = Topic.objects.get(id=self.kwargs.get('pk', None))
+
+        return super(PostCreateView, self).form_valid(form)
+
     def get_context_data(self, **kwargs):
         context = super(PostCreateView, self).get_context_data(**kwargs)
         context['topic'] = Topic.objects.get(id=self.kwargs.get('pk', None))
