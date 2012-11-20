@@ -37,3 +37,6 @@ class Post(models.Model):
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     updated = models.DateTimeField(_("Updated"),auto_now=True)
     body = models.TextField(_("Body"))
+
+    class Meta:
+        ordering = ['created']
