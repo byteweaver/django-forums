@@ -15,7 +15,11 @@ class Category(models.Model):
 class Forum(models.Model):
     category = models.ForeignKey(Category, related_name='forums')
     name = models.CharField(_("Name"), max_length=255)
+    position = models.IntegerField(_("Position"), default=0)
     description = models.TextField(_("Description"), blank=True)
+
+    class Meta:
+        ordering = ['position']
 
 
 class Topic(models.Model):
