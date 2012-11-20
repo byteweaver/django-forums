@@ -28,4 +28,5 @@
         {% endfor %}
     </tbody>
 </table>
+<p><a href="{% url forums:topic_create forum.id %}">{% trans "Create topic" %}</a></p>
 {% endblock %}
