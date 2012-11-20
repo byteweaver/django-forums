@@ -11,6 +11,9 @@ class Category(models.Model):
     class Meta:
         ordering = ['position']
 
+    def __unicode__(self):
+        return self.name
+
 
 class Forum(models.Model):
     category = models.ForeignKey(Category, related_name='forums')
@@ -21,6 +24,9 @@ class Forum(models.Model):
     class Meta:
         ordering = ['position']
 
+    def __unicode__(self):
+        return self.name
+
 
 class Topic(models.Model):
     forum = models.ForeignKey(Forum, related_name='topics')
@@ -29,6 +35,9 @@ class Topic(models.Model):
 
     class Meta:
         ordering = ['-last_post__created']
+
+    def __unicode__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -40,3 +49,6 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['created']
+
+    def __unicode__(self):
+        return self.body
