@@ -39,11 +39,19 @@
             <td>0</td>
         </tr>
         {% empty %}
+        {% if forum.is_closed %}
+        <tr>
+            <td colspan="5">{% trans "No topics in this forum, only admins can create and post here." %}</td>
+        </tr>
+        {% else %}
         <tr>
             <td colspan="5">{% trans "No topics in this forum, create one :)" %}</td>
         </tr>
+        {% endif %}
         {% endfor %}
     </tbody>
 </table>
+{% if not forum.is_closed %}
 <p><a href="{% url forums:topic_create forum.id %}" class="btn btn-primary">{% trans "Create topic" %}</a></p>
+{% endif %}
 {% endblock %}
