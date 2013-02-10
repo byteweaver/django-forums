@@ -44,7 +44,11 @@
 {% endfor %}
 <div class="row">
     <div class="span12">
+        {% if topic.forum.is_closed %}
+        <p>{% trans "This forum is closed, only admins can create and post here." %}
+        {% else %}
         <p><a href="{% url forums:post_create topic.id %}" class="btn btn-primary">{% trans "Create post" %}</a></p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
