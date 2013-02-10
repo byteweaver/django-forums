@@ -51,7 +51,7 @@
         {% endfor %}
     </tbody>
 </table>
-{% if not forum.is_closed %}
+{% if not forum.is_closed or user.is_staff %}
 <p><a href="{% url forums:topic_create forum.id %}" class="btn btn-primary">{% trans "Create topic" %}</a></p>
 {% endif %}
 {% endblock %}
