@@ -8,8 +8,8 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{% url forums:overview %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
-    <li><a href="{% url forums:overview %}#{{forum.category.id}}">{{forum.category.name}}</a> <span class="divider">/</span></li>
+    <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
+    <li><a href="{% url 'forums:overview' %}#{{forum.category.id}}">{{forum.category.name}}</a> <span class="divider">/</span></li>
     <li class="active">{{forum.name}}</li>
 </ul>
 {% endblock %}
@@ -32,7 +32,7 @@
         <tr>
             <td style="width: 14px;"><i class="icon-circle-arrow-right" style="margin-top: 1px;"></i></td>
             <td style="width: 70%;">
-                <a href="{% url forums:topic topic.id %}">{{topic.name}}</a>
+                <a href="{% url 'forums:topic' topic.id %}">{{topic.name}}</a>
             </td>
             <td>{{topic.last_post.user.username}}</td>
             <td>{{topic.count_posts}}</td>
@@ -52,6 +52,6 @@
     </tbody>
 </table>
 {% if not forum.is_closed or user.is_staff %}
-<p><a href="{% url forums:topic_create forum.id %}" class="btn btn-primary">{% trans "Create topic" %}</a></p>
+<p><a href="{% url 'forums:topic_create' forum.id %}" class="btn btn-primary">{% trans "Create topic" %}</a></p>
 {% endif %}
 {% endblock %}

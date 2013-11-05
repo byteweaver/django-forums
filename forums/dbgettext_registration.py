@@ -1,7 +1,7 @@
 from dbgettext.registry import registry, Options
 from dbgettext.lexicons import html
 
-from models import Category, Forum
+from forums.models import Category, Forum
 
 
 class CategoryOptions(Options):
