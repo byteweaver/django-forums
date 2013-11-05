@@ -4,8 +4,8 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 
-from forms import TopicCreateForm, PostCreateForm
-from models import Category, Topic, Forum, Post
+from forums.forms import TopicCreateForm, PostCreateForm
+from forums.models import Category, Topic, Forum, Post
 
 
 class CategoryListView(ListView):

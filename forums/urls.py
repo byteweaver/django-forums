@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 from django.contrib.auth.decorators import login_required
 
-from views import CategoryListView, ForumDetailView, TopicDetailView, TopicCreateView, PostCreateView
+from forums.views import CategoryListView, ForumDetailView, TopicDetailView, TopicCreateView, PostCreateView
 
 
 urlpatterns = patterns('',

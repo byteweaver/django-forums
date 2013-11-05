@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from models import Category, Forum, Topic, Post
+from forums.models import Category, Forum, Topic, Post
 
 
 class ForumAdmin(admin.ModelAdmin):
