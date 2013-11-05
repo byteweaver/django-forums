@@ -26,7 +26,7 @@ class Forum(models.Model):
         ordering = ['position']
 
     def get_latest_topic(self):
-        if self.topics.count()>0:
+        if self.topics.count() > 0:
             return self.topics.all()[0]
         return None
 
@@ -68,7 +68,7 @@ class Post(models.Model):
     topic = models.ForeignKey(Topic, related_name='posts')
     user = models.ForeignKey(User, related_name='forum_posts')
     created = models.DateTimeField(_("Created"), auto_now_add=True)
-    updated = models.DateTimeField(_("Updated"),auto_now=True)
+    updated = models.DateTimeField(_("Updated"), auto_now=True)
     body = models.TextField(_("Body"))
 
     class Meta:

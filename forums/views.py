@@ -11,11 +11,14 @@ from forums.models import Category, Topic, Forum, Post
 class CategoryListView(ListView):
     model = Category
 
+
 class ForumDetailView(DetailView):
     model = Forum
 
+
 class TopicDetailView(DetailView):
     model = Topic
+
 
 class TopicCreateView(FormView):
     template_name = 'forums/topic_create.html'
