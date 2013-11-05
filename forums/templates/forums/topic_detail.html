@@ -8,47 +8,47 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
-    <li><a href="{% url 'forums:overview' %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
-    <li><a href="{% url 'forums:forum' topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
-    <li class="active">{{topic.name}}</li>
+  <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
+  <li><a href="{% url 'forums:overview' %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
+  <li><a href="{% url 'forums:forum' topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
+  <li class="active">{{topic.name}}</li>
 </ul>
 {% endblock %}
 
 {% block content %}
 <div class="page-header">
-    <h1>{% trans "Forums" %}</h1>
+  <h1>{% trans "Forums" %}</h1>
 </div>
 {% for post in topic.posts.all %}
 <div class="row">
-    <div class="span3">
-        <div class="thumbnail pull-left" style="margin-right: 15px;">
-            <img src="http://placehold.it/64x64" alt="avatar">
-        </div>
-        <div>
-            <p>{{post.user.username}}</p>
-        </div>
+  <div class="span3">
+    <div class="thumbnail pull-left" style="margin-right: 15px;">
+      <img src="http://placehold.it/64x64" alt="avatar">
     </div>
-    <div class="span7">
-        <div>
-            {{post.body|linebreaks}}
-        </div>
-        <div style="clear: both;"></div>
+    <div>
+      <p>{{post.user.username}}</p>
     </div>
-    <div class="span2">
-        <p class="pull-right"><small><a href="#{{forloop.counter}}" name="{{forloop.counter}}">#{{forloop.counter}}</a></small></p>
-        <p class="pull-right"><small>{{post.created}}</small></p>
+  </div>
+  <div class="span7">
+    <div>
+      {{post.body|linebreaks}}
     </div>
+    <div style="clear: both;"></div>
+  </div>
+  <div class="span2">
+    <p class="pull-right"><small><a href="#{{forloop.counter}}" name="{{forloop.counter}}">#{{forloop.counter}}</a></small></p>
+    <p class="pull-right"><small>{{post.created}}</small></p>
+  </div>
 </div>
 <hr>
 {% endfor %}
 <div class="row">
-    <div class="span12">
-        {% if not topic.forum.is_closed or user.is_staff %}
-        <p>{% trans "This forum is closed, only admins can create and post here." %}
-        {% else %}
-        <p><a href="{% url 'forums:post_create' topic.id %}" class="btn btn-primary">{% trans "Create post" %}</a></p>
-        {% endif %}
-    </div>
+  <div class="span12">
+    {% if not topic.forum.is_closed or user.is_staff %}
+    <p>{% trans "This forum is closed, only admins can create and post here." %}
+    {% else %}
+    <p><a href="{% url 'forums:post_create' topic.id %}" class="btn btn-primary">{% trans "Create post" %}</a></p>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}
