@@ -12,3 +12,4 @@ class ForumOptions(Options):
     parsed_attributes = {'description': html.lexicon}
 
 registry.register(Category, CategoryOptions)
+registry.register(Forum, ForumOptions)
