@@ -45,9 +45,9 @@
 <div class="row">
   <div class="span12">
     {% if not topic.forum.is_closed or user.is_staff %}
-    <p>{% trans "This forum is closed, only admins can create and post here." %}
-    {% else %}
     <p><a href="{% url 'forums:post_create' topic.id %}" class="btn btn-primary">{% trans "Create post" %}</a></p>
+    {% else %}
+    <p>{% trans "This forum is closed, only admins can create and post here." %}
     {% endif %}
   </div>
 </div>
