@@ -7,12 +7,12 @@
 {% endblock %}
 
 {% block breadcrumb %}
-<ul class="breadcrumb">
-  <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
-  <li><a href="{% url 'forums:overview' %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
-  <li><a href="{% url 'forums:forum' topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
+<ol class="breadcrumb">
+  <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a></li>
+  <li><a href="{% url 'forums:overview' %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a></li>
+  <li><a href="{% url 'forums:forum' topic.forum.id %}">{{topic.forum.name}}</a></li>
   <li class="active">{{topic.name}}</li>
-</ul>
+</ol>
 {% endblock %}
 
 {% block content %}
