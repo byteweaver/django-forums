@@ -8,34 +8,34 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
-    <li><a href="{% url 'forums:overview' %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
-    <li><a href="{% url 'forums:forum' topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
-    <li><a href="{% url 'forums:topic' topic.id %}">{{topic.name}}</a> <span class="divider">/</span></li>
-    <li class="active">{% trans "Create post" %}</li>
+  <li><a href="{% url 'forums:overview' %}">{% trans "Forums" %}</a> <span class="divider">/</span></li>
+  <li><a href="{% url 'forums:overview' %}#{{topic.forum.category.id}}">{{topic.forum.category.name}}</a> <span class="divider">/</span></li>
+  <li><a href="{% url 'forums:forum' topic.forum.id %}">{{topic.forum.name}}</a> <span class="divider">/</span></li>
+  <li><a href="{% url 'forums:topic' topic.id %}">{{topic.name}}</a> <span class="divider">/</span></li>
+  <li class="active">{% trans "Create post" %}</li>
 </ul>
 {% endblock %}
 
 {% block content %}
 <div class="page-header">
-    <h1>{% trans "Forums" %}</h1>
+  <h1>{% trans "Forums" %}</h1>
 </div>
 <div class="row">
-    <div class="span3">
-        <div class="thumbnail pull-left" style="margin-right: 15px;">
-            <img src="http://placehold.it/64x64" alt="avatar">
-        </div>
-        <div>
-            <p>{{user.username}}</p>
-        </div>
+  <div class="span3">
+    <div class="thumbnail pull-left" style="margin-right: 15px;">
+      <img src="http://placehold.it/64x64" alt="avatar">
     </div>
-    <div class="span9">
-        <form method="post" action="{% url 'forums:post_create' topic.id %}">
-            {% csrf_token %}
-            {% include "forms.html" %}
-            <p><input type="submit" class="btn btn-primary" value="{% trans "Create post" %}"></p>
-        </form>
+    <div>
+      <p>{{user.username}}</p>
     </div>
+  </div>
+  <div class="span9">
+    <form method="post" action="{% url 'forums:post_create' topic.id %}">
+      {% csrf_token %}
+      {% include "forms.html" %}
+      <p><input type="submit" class="btn btn-primary" value="{% trans "Create post" %}"></p>
+    </form>
+  </div>
 </div>
 {% endblock %}
 
