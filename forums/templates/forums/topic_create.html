@@ -20,7 +20,7 @@
   <h1>{% trans "Forums" %}</h1>
 </div>
 <div class="row">
-  <div class="span3">
+  <div class="col-md-3">
     <div class="thumbnail pull-left" style="margin-right: 15px;">
       <img src="http://placehold.it/64x64" alt="avatar">
     </div>
@@ -28,7 +28,7 @@
       <p>{{user.username}}</p>
     </div>
   </div>
-  <div class="span9">
+  <div class="col-md-9">
     <form method="post" action="{% url 'forums:topic_create' forum.id %}">
       {% csrf_token %}
       {% include "forms.html" %}
