@@ -8,37 +8,37 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-    <li class="active">{% trans "Forums" %}</li>
+  <li class="active">{% trans "Forums" %}</li>
 </ul>
 {% endblock %}
 
 {% block content %}
 <div class="page-header">
-    <h1>{% trans "Forums" %}</h1>
+  <h1>{% trans "Forums" %}</h1>
 </div>
 <table class="table">
-    {% for category in category_list %}
-    <thead>
-        <tr>
-            <th colspan="2"><a name="{{category.id}}">{{category.name}}</a></th>
-            <td>{% trans "Last Poster" %}</td>
-            <td>{% trans "Topics" %}</td>
-            <td>{% trans "Posts" %}</td>
-        </tr>
-    </thead>
-    <tbody>
-        {% for forum in category.forums.all %}
-        <tr>
-            <td style="width: 14px;"><i class="icon-circle-arrow-right" style="margin-top: 1px;"></i></td>
-            <td style="width: 70%;">
-                <a href="{% url 'forums:forum' forum.id %}">{{forum.name}}</a>
-            </td>
-            <td>{{forum.get_latest_poster}}</td>
-            <td>{{forum.count_topics}}</td>
-            <td>{{forum.count_posts}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    {% endfor %}
+  {% for category in category_list %}
+  <thead>
+    <tr>
+      <th colspan="2"><a name="{{category.id}}">{{category.name}}</a></th>
+      <td>{% trans "Last Poster" %}</td>
+      <td>{% trans "Topics" %}</td>
+      <td>{% trans "Posts" %}</td>
+    </tr>
+  </thead>
+  <tbody>
+  {% for forum in category.forums.all %}
+  <tr>
+    <td style="width: 14px;"><i class="icon-circle-arrow-right" style="margin-top: 1px;"></i></td>
+    <td style="width: 70%;">
+      <a href="{% url 'forums:forum' forum.id %}">{{forum.name}}</a>
+    </td>
+    <td>{{forum.get_latest_poster}}</td>
+    <td>{{forum.count_topics}}</td>
+    <td>{{forum.count_posts}}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+  {% endfor %}
 </table>
 {% endblock %}
