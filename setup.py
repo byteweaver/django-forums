@@ -25,5 +25,5 @@ setup(
         'coverage',
         'django-coverage',
     ],
-    test_suite='forums.tests',
+    test_suite='forums.tests.runtests.runtests',
 )
