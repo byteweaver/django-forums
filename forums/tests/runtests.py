@@ -40,6 +40,9 @@ if not settings.configured:
             }
         },
         ROOT_URLCONF='forums.tests.urls',
+        TEMPLATE_DIRS=(
+            'forums/tests/templates/',
+        ),
         INSTALLED_APPS=INSTALLED_APPS,
         COVERAGE_MODULE_EXCLUDES=COVERAGE_MODULE_EXCLUDES,
         COVERAGE_REPORT_HTML_OUTPUT_DIR=os.path.join(
