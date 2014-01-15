@@ -24,6 +24,7 @@ setup(
         'django-nose',
         'coverage',
         'django-coverage',
+        'factory-boy',
     ],
     test_suite='forums.tests.runtests.runtests',
 )
