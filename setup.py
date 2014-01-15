@@ -16,6 +16,7 @@ setup(
     author='byteweaver',
     author_email='contact@byteweaver.net',
     url='https://github.com/byteweaver/django-forums',
+    platforms=['OS Independent'],
     packages=find_packages(),
     install_requires=[
         'django',
