@@ -2,3 +2,4 @@ django
 django-nose
 coverage
 django-coverage
+factory-boy
