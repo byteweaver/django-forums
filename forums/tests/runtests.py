@@ -39,6 +39,7 @@ if not settings.configured:
                 "NAME": ":memory:",
             }
         },
+        ROOT_URLCONF='forums.tests.urls',
         INSTALLED_APPS=INSTALLED_APPS,
         COVERAGE_MODULE_EXCLUDES=COVERAGE_MODULE_EXCLUDES,
         COVERAGE_REPORT_HTML_OUTPUT_DIR=os.path.join(
