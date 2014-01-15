@@ -39,3 +39,14 @@ Hook this app into your ``urls.py``:
 
 With the latest update, starting from version 0.1.x, django-forums supports django 1.5 and beyond. The default templates are now based on bootstrap-3.
 If you use an older version of django or bootstrap, please have a look at version 0.9.0, but remember it is no longer maintained.
+
+
+## Tests
+
+To run the test cases simply call:
+
+    $ python setup.py test
+
+or to run them inside a virtualenv use:
+
+    $ make test
