@@ -8,6 +8,7 @@ class CategoryModelTest(TestCase):
     def test_category_creation(self):
         category = CategoryFactory.create()
 
+        self.assertEquals(Category.objects.count(), 1)
         self.assertEquals(category.name, 'Category')
 
     def test_forum_creation(self):
