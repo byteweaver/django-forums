@@ -1,7 +1,8 @@
+from datetime import datetime
 from django.test import TestCase
 
-from forums.models import Category, Forum, Topic
-from forums.tests.factories import CategoryFactory, ForumFactory, TopicFactory
+from forums.models import Category, Forum, Topic, Post
+from forums.tests.factories import CategoryFactory, ForumFactory, TopicFactory, PostFactory
 
 
 class CategoryModelTest(TestCase):
@@ -26,3 +27,13 @@ class CategoryModelTest(TestCase):
         self.assertEquals(Topic.objects.count(), 1)
         self.assertEquals(topic.name, 'Topic')
         self.assertEquals(topic.last_post, None)
+
+    def test_post_creation(self):
+        post = PostFactory.create()
+
+        self.assertEquals(Post.objects.count(), 1)
+        self.assertEquals(post.topic.name, 'Topic')
+        self.assertEquals(post.user.username, 'Username')
+        self.assertTrue(isinstance(post.created, datetime))
+        self.assertTrue(isinstance(post.updated, datetime))
+        self.assertEquals(post.body, 'Body text\nWith multiple lines!')
