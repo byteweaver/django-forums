@@ -1,7 +1,7 @@
 import factory
 from factory.django import DjangoModelFactory
 
-from forums.models import Category, Forum
+from forums.models import Category, Forum, Topic
 
 
 class CategoryFactory(DjangoModelFactory):
@@ -15,3 +15,10 @@ class ForumFactory(DjangoModelFactory):
 
     category = factory.SubFactory(CategoryFactory)
     name = 'Forum'
+
+
+class TopicFactory(DjangoModelFactory):
+    FACTORY_FOR = Topic
+
+    forum = factory.SubFactory(ForumFactory)
+    name = 'Topic'
