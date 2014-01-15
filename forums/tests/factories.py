@@ -3,7 +3,7 @@ from factory.django import DjangoModelFactory
 
 from django.contrib.auth import get_user_model
 
-from forums.models import Category, Forum, Topic
+from forums.models import Category, Forum, Topic, Post
 
 
 class UserFactory(DjangoModelFactory):
@@ -32,3 +32,11 @@ class TopicFactory(DjangoModelFactory):
 
     forum = factory.SubFactory(ForumFactory)
     name = 'Topic'
+
+
+class PostFactory(DjangoModelFactory):
+    FACTORY_FOR = Post
+
+    topic = factory.SubFactory(TopicFactory)
+    user = factory.SubFactory(UserFactory)
+    body = 'Body text\nWith multiple lines!'
