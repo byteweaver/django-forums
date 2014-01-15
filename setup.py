@@ -18,6 +18,12 @@ setup(
     url='https://github.com/byteweaver/django-forums',
     platforms=['OS Independent'],
     packages=find_packages(),
+    classifiers=[
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+    ],
     install_requires=[
         'django',
     ],
