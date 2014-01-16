@@ -31,7 +31,7 @@ Hook this app into your ``urls.py``:
 
     urlpatterns = patterns('',
         ...
-        url(r'^your-url/$', include('forums.urls')),
+        url(r'^your-url/$', include('forums.urls', namespace='forums')),
         ...
     )
 
