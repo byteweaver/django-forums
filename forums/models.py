@@ -1,7 +1,6 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
-from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -66,7 +65,7 @@ class Topic(models.Model):
 
 class Post(models.Model):
     topic = models.ForeignKey(Topic, related_name='posts')
-    user = models.ForeignKey(User, related_name='forum_posts')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='forum_posts')
     created = models.DateTimeField(_("Created"), auto_now_add=True)
     updated = models.DateTimeField(_("Updated"), auto_now=True)
     body = models.TextField(_("Body"))
