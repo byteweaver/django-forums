@@ -50,3 +50,7 @@ To run the test cases simply call:
 or to run them inside a virtualenv use:
 
     $ make test
+
+## Tips and tricks
+
+To improve the bootstrap form integration check out tzangms/django-bootstrap-form and override the forms.html template or have a look at issue #8 how to path the source code.
