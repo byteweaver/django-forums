@@ -54,3 +54,5 @@ or to run them inside a virtualenv use:
 ## Tips and tricks
 
 To improve the bootstrap form integration check out tzangms/django-bootstrap-form and override the forms.html template or have a look at issue #8 how to path the source code.
+
+To override the template file make sure you add the application containing the new template first.
