@@ -1,5 +1,6 @@
-django-forums
-===============
+# django-forums
+
+[![Build Status](https://travis-ci.org/byteweaver/django-forums.svg?branch=master)](https://travis-ci.org/byteweaver/django-forums)
 
 Small standalone django forums application.
 
