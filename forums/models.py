@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 
+@python_2_unicode_compatible
 class Category(models.Model):
     name = models.CharField(_("Name"), max_length=255, unique=True)
     position = models.IntegerField(_("Position"), default=0)
@@ -10,10 +12,11 @@ class Category(models.Model):
     class Meta:
         ordering = ['position']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
+@python_2_unicode_compatible
 class Forum(models.Model):
     category = models.ForeignKey(Category, related_name='forums')
     name = models.CharField(_("Name"), max_length=255)
@@ -44,10 +47,11 @@ class Forum(models.Model):
             count += topic.count_posts()
         return count
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
+@python_2_unicode_compatible
 class Topic(models.Model):
     forum = models.ForeignKey(Forum, related_name='topics')
     name = models.CharField(_("Name"), max_length=255)
@@ -59,10 +63,11 @@ class Topic(models.Model):
     def count_posts(self):
         return self.posts.count()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
+@python_2_unicode_compatible
 class Post(models.Model):
     topic = models.ForeignKey(Topic, related_name='posts')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='forum_posts')
@@ -73,5 +78,5 @@ class Post(models.Model):
     class Meta:
         ordering = ['created']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.body
