@@ -2,7 +2,9 @@ from datetime import datetime
 from django.test import TestCase
 
 from forums.models import Category, Forum, Topic, Post
-from forums.factories import CategoryFactory, ForumFactory, TopicFactory, PostFactory
+from forums.factories import (
+    CategoryFactory, ForumFactory, TopicFactory, PostFactory
+)
 
 
 class CategoryModelTest(TestCase):
@@ -18,7 +20,7 @@ class CategoryModelTest(TestCase):
         self.assertEquals(Forum.objects.count(), 1)
         self.assertEquals(forum.name, 'Forum')
         self.assertEquals(forum.position, 0)
-        self.assertEquals(forum.description , '')
+        self.assertEquals(forum.description, '')
         self.assertEquals(forum.is_closed, False)
 
     def test_topic_creation(self):
