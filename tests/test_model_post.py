@@ -8,4 +8,4 @@ class CategoryModelTests(TestCase):
         self.post = PostFactory()
 
     def test_string_method(self):
-        self.assertEquals(str(self.post), 'Post')
+        self.assertEquals(str(self.post), 'Body text\nWith multiple lines!')
