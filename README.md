@@ -44,13 +44,13 @@ If you use an older version of django or bootstrap, please have a look at versio
 
 ## Tests
 
-To run the test cases simply call:
+To run the tests you need the test runner `tox`:
 
-    $ python setup.py test
+    $ pip install tox
 
-or to run them inside a virtualenv use:
+Then just call him:
 
-    $ make test
+    $ tox
 
 ## Tips and tricks
 
