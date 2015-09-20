@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 
+@python_2_unicode_compatible
 class Category(models.Model):
     name = models.CharField(_("Name"), max_length=255, unique=True)
     position = models.IntegerField(_("Position"), default=0)
@@ -10,7 +12,7 @@ class Category(models.Model):
     class Meta:
         ordering = ['position']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
