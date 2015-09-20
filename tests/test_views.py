@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from forums.tests.factories import ForumFactory, TopicFactory
+from forums.factories import ForumFactory, TopicFactory
 
 
 class CategoryListViewTest(TestCase):

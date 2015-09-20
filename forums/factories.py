@@ -7,7 +7,8 @@ from forums.models import Category, Forum, Topic, Post
 
 
 class UserFactory(DjangoModelFactory):
-    FACTORY_FOR = get_user_model()
+    class Meta:
+        model = get_user_model()
 
     username = 'Username'
     email = 'email@example.com'
@@ -15,27 +16,31 @@ class UserFactory(DjangoModelFactory):
 
 
 class CategoryFactory(DjangoModelFactory):
-    FACTORY_FOR = Category
+    class Meta:
+        model = Category
 
     name = 'Category'
 
 
 class ForumFactory(DjangoModelFactory):
-    FACTORY_FOR = Forum
+    class Meta:
+        model = Forum
 
     category = factory.SubFactory(CategoryFactory)
     name = 'Forum'
 
 
 class TopicFactory(DjangoModelFactory):
-    FACTORY_FOR = Topic
+    class Meta:
+        model = Topic
 
     forum = factory.SubFactory(ForumFactory)
     name = 'Topic'
 
 
 class PostFactory(DjangoModelFactory):
-    FACTORY_FOR = Post
+    class Meta:
+        model = Post
 
     topic = factory.SubFactory(TopicFactory)
     user = factory.SubFactory(UserFactory)
