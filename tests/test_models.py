@@ -7,7 +7,7 @@ from forums.factories import (
 )
 
 
-class CategoryModelTest(TestCase):
+class ModelCreationTests(TestCase):
     def test_category_creation(self):
         category = CategoryFactory.create()
 
