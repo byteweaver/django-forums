@@ -1,6 +1,6 @@
 from django import template
 
-from orbarena.forums.models import Topic
+from forums.models import Topic
 
 
 register = template.Library()
