@@ -2,7 +2,7 @@ from datetime import datetime
 from django.test import TestCase
 
 from forums.models import Category, Forum, Topic, Post
-from forums.tests.factories import CategoryFactory, ForumFactory, TopicFactory, PostFactory
+from forums.factories import CategoryFactory, ForumFactory, TopicFactory, PostFactory
 
 
 class CategoryModelTest(TestCase):
